@@ -10,6 +10,7 @@
 	<properties>
 		<spring.version>5.0.1.RELEASE</spring.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<spring-security.version>5.7.2</spring-security.version>
 	</properties>
 	<repositories>
 		<repository>
@@ -85,12 +86,23 @@
 			<artifactId>spring-context</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
+		
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-tx -->
+		<!-- 스프링 트랜잭션 -->
 		<dependency>
 		    <groupId>org.springframework</groupId>
 		    <artifactId>spring-tx</artifactId>
 		    <version>5.3.22</version>
 		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-core -->
+		<!-- 스프링 시큐리티 -->
+		<dependency>
+		    <groupId>org.springframework.security</groupId>
+		    <artifactId>spring-security-core</artifactId>
+		    <version>5.7.1</version>
+		</dependency>
+
 
 	</dependencies>
 	<build>

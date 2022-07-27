@@ -1,28 +1,20 @@
 package sample.spring.chapter01.bankapp;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.security.access.annotation.Secured;
 
+// 선언적 트랜잭션 관리
+// 스프링을 사용하면 트랜잭션을 선언적으로 관리할 수 있다.
+// 메서드에 @Transactional 애너테이션을 설정하면 스프링이 트랜잭션을 관리한다.
+//
 public class FixedDepositService2 {
-	private static Logger logger = LogManager.getLogger(FixedDepositService2.class);
-	private FixedDepositDao fixedDepositDao;
-
-	public FixedDepositService2() {
-		logger.info("initializing");
-	}
-
-	public void setFixedDepositDao(FixedDepositDao fixedDepositDao) {
-		logger.info("Setting fixedDepositDao property");
-		this.fixedDepositDao = fixedDepositDao;
-	}
-
-	public FixedDepositDetails getFixedDepositDetails(long id) {
-		return fixedDepositDao.getFixedDepositDetails(id);
-	}
-
-	public boolean createFixedDeposit(FixedDepositDetails fdd) {
-		return fixedDepositDao.createFixedDeposit(fdd);
+	
+	public FixedDepositDetails getFixedDepositDetails() {return null;}
+	
+	@Transactional
+	@Secured({ "SAVING_ACCOUNT_CUSTOMER", "APPLICATION_ADMIN" })
+	public boolean createFixedDeposit(FixedDepositDetails fixedDepositDetails) {
+		return false;
 	}
 	
 }

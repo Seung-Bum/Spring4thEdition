@@ -2,7 +2,6 @@ package sample.spring.chapter01.bankapp;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.springframework.transaction.annotation.Transactional;
 
 public class FixedDepositService {
 	private static Logger logger = LogManager.getLogger(FixedDepositService.class);
