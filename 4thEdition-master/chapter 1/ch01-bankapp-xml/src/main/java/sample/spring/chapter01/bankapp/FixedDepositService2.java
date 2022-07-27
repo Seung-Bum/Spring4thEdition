@@ -4,11 +4,11 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.transaction.annotation.Transactional;
 
-public class FixedDepositService {
-	private static Logger logger = LogManager.getLogger(FixedDepositService.class);
+public class FixedDepositService2 {
+	private static Logger logger = LogManager.getLogger(FixedDepositService2.class);
 	private FixedDepositDao fixedDepositDao;
 
-	public FixedDepositService() {
+	public FixedDepositService2() {
 		logger.info("initializing");
 	}
 
