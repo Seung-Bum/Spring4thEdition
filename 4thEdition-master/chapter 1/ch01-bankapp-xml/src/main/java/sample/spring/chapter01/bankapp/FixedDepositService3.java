@@ -1,22 +1,30 @@
 package sample.spring.chapter01.bankapp;
 
-import org.springframework.transaction.annotation.Transactional;
-import org.springframework.security.access.annotation.Secured;
+import org.springframework.jmx.export.annotation.ManagedOperation;
+import org.springframework.jmx.export.annotation.ManagedResource;
 
-// 선언적 트랜잭션 관리
-// 스프링을 사용하면 트랜잭션을 선언적으로 관리할 수 있다.
-// 메서드에 @Transactional 애너테이션을 설정하면 스프링이 트랜잭션을 관리한다.
+
+// JMX
 //
+
 public class FixedDepositService3 {
 	
-	public FixedDepositDetails getFixedDepositDetails() {return null;}
+	private boolean active;
 	
-	@Transactional
-	@Secured({ "SAVING_ACCOUNT_CUSTOMER", "APPLICATION_ADMIN" })
-	public boolean createFixedDeposit(FixedDepositDetails fixedDepositDetails) {
-		return false;
+	public FixedDepositDetails getFixedDepositDetails() {
+		if(active) {}
+		return null;
 	}
 	
+	public boolean createFixedDeposit(FixedDepositDetails fixedDepositDetails) {
+		if(active) {}
+		return active;
+	}
 	
+	@ManagedOperation
+	public void activateService() { active = true; }
+	
+	@ManagedOperation
+	public void deactivateService() { active = false; }
 	
 }
