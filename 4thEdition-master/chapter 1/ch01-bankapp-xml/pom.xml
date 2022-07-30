@@ -102,6 +102,15 @@
 		    <artifactId>spring-security-core</artifactId>
 		    <version>5.7.1</version>
 		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-jms -->
+		<!-- JMS -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-jms</artifactId>
+		    <version>2.5</version>
+		</dependency>
+
 
 
 	</dependencies>
