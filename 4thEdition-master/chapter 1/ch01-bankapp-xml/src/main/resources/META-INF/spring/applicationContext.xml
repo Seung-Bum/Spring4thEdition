@@ -1,10 +1,13 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-
+	
+	
+	<!-- 세터 메서드를 이용한 의존관계 주입 -->
 	<bean id="controller"
 		class="sample.spring.chapter01.bankapp.FixedDepositController">
 		<property name="fixedDepositService" ref="service" />
+		<!-- id가 service인 bean을 찾아간다. -->
 	</bean>
 
 	<bean id="service"

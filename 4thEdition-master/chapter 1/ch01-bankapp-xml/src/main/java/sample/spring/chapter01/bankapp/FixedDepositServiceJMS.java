@@ -11,12 +11,12 @@ import org.springframework.jms.core.JmsTemplate;
 
 // 애플리케이션간의 통신을 메시지 기반으로 수행하기 위한 Java API를 정의
 
-public class FixedDepositService4 {
+public class FixedDepositServiceJMS {
 	
 	@Autowired
 	private transient JmsTemplate jmsTemplate;
-		public boolean submitRequest(Request request) {
-			jmsTemplate.convertAndSend(request);
-		}
+//		public boolean submitRequest(Request request) { // 어떤 request를 import해야 할지모르겠음
+//			jmsTemplate.convertAndSend(request);
+//		}
 	
 }

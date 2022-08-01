@@ -13,7 +13,7 @@ import org.springframework.jmx.export.annotation.ManagedResource;
 // FixedDepositService 클래스가 자신의 인스턴스를 MBean 서버에 등록한다.
 // JMX API를 직접 사용하지 않고도 자신의 메서드를 JMX 연산으로 노출시킬 수 있다는 사실을 알 수 있다. 
 
-public class FixedDepositService3 {
+public class FixedDepositServiceJMX {
 	
 	private boolean active;
 	
