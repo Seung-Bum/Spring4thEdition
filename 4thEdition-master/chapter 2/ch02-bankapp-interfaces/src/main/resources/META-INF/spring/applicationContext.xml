@@ -15,4 +15,7 @@
 
 	<bean id="dao"
 		class="sample.spring.chapter02.bankapp.dao.FixedDepositHibernateDao" />
+		
+	<!-- applicationContext.xml 파일은 FixedDepositHibernateDao의 인스턴스(FixedDepositDao 인터페이스를 구현함)를
+	     FixedDepositServiceImpl에 주입한다. -->
 </beans>

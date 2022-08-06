@@ -21,5 +21,6 @@ public class BankApp {
 				+ fixedDepositController.submit());
 		logger.info("Returned fixed deposit info : "
 				+ fixedDepositController.get());
+		
 	}
 }
