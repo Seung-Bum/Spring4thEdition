@@ -3,6 +3,9 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
 
+	<!-- applicationContext.xml 파일은 FixedDepositHibernateDao의 인스턴스(FixedDepositDao 인터페이스를 구현함)를
+	     FixedDepositServiceImpl에 주입한다. 
+
 	<bean id="controller"
 		class="sample.spring.chapter02.bankapp.controller.FixedDepositControllerImpl">
 		<property name="fixedDepositService" ref="service" />
@@ -14,8 +17,20 @@
 	</bean>
 
 	<bean id="dao"
-		class="sample.spring.chapter02.bankapp.dao.FixedDepositHibernateDao" />
+		class="sample.spring.chapter02.bankapp.dao.FixedDepositHibernateDao" /> -->
 		
-	<!-- applicationContext.xml 파일은 FixedDepositHibernateDao의 인스턴스(FixedDepositDao 인터페이스를 구현함)를
-	     FixedDepositServiceImpl에 주입한다. -->
+		
+		
+	<!-- FixedDepositDaoFactory의 getFixedDepositDao 메서드를 호출하고, 호출이 반환하는 FixedDepositJdbcDao 인스턴스의
+	databaseInfo 프로퍼티를 설정하는 빈 설정 
+	
+	인스턴스 팩토리 메서드와 마찬가지로 정적 팩토리 메서드가 반환하는 인스턴스의 의존관계를 설정할때도 <property> 엘리먼트를 사용한다. -->
+	<bean id = "daoFactory" class = "FixedDepositDaoFactory" />
+	<bean id ="dao" factory-bean="daoFactory" factory-method="getFixedDepositDao">
+		<Constructor-arg index="0" value="jdbc" />
+		<property name="databaseInfo" ref="databaseInfo">
+	</bean>
+	<bean id="databaseInfo" class="DatabaseInfo" /> 
+		
+	
 </beans>
