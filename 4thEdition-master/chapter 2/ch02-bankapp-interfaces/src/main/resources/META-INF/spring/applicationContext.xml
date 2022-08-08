@@ -31,6 +31,14 @@
 		<property name="databaseInfo" ref="databaseInfo">
 	</bean>
 	<bean id="databaseInfo" class="DatabaseInfo" /> 
+	
+	
+	<!-- 생성자와 세터기반 ID를 섞어서 사용하기 -->
+	<bean id="personalBankingService" class="PersonalBankingService">
+		<constructor-org index="0" ref="jmsMessageSender" />
+		<constructor-org index="1" ref="jmsMessageSender" />
+		<property name="webServiceInvoker" ref="webServiceInvoker" />
+	</bean>
 		
 	
 </beans>
