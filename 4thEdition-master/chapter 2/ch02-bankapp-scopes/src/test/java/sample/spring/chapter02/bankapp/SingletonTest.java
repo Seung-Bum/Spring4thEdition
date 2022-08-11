@@ -56,7 +56,7 @@ public class SingletonTest {
 		assertNotSame("Same FixedDepositController instances",
 				fixedDepositController1, fixedDepositController2);
 	}
-
+	
 	@Test
 	public void testSingletonScopePerBeanDef() {
 		FixedDepositDao fixedDepositDao1 = (FixedDepositDao) context

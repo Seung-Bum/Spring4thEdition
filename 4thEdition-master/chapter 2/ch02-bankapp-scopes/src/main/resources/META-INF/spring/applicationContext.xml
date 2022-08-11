@@ -2,7 +2,9 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
-
+	
+	<!-- 싱글턴 스코프 빈의 인스턴스는 스프링 컨테이너가 생성될 때 함께 생성되고, 스프링 컨테이너가 파괴될 때 함께 파괴된다.
+		스프링 컨테이너는 싱글턴 스코프 빈의 인스턴스를 단 하나만 만들고, 그 빈에 의존하는 모든 빈에 유일한 인스턴스를 공유한다. -->
 	<bean id="controller"
 		class="sample.spring.chapter02.bankapp.controller.FixedDepositControllerImpl">
 		<property name="fixedDepositService" ref="service" />
@@ -24,3 +26,8 @@
 		class="sample.spring.chapter02.bankapp.dao.FixedDepositDaoImpl" />
 
 </beans>
+<!-- 빈이 어떤 대화적 상태도 유지하지 않는다면 싱글턴 스코프 빈으로 정의해야하고, 빈에 대화적 상태를 유지해야 한다면 프로토 타입 스코프 빈으로
+정의해야 한다. MyBank 애플리케이션의 FixedDepositServiceImpl, FixedDepositDaoImpl, FixedDepositControllerImpl은
+천성적으로 상태가 없다. 따라서 이들은 싱글턴 스코프 빈으로 정의해야 한다. MyBank 애플리케이션의 FixedDepositDetails빈(도매인 객체)은
+대화적 상태를 유지하므로, 프로토타입 스코프 빈으로 선언해야 한다. -->
+
