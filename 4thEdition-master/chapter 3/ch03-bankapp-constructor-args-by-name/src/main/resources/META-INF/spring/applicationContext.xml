@@ -2,7 +2,8 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
-
+	
+	<!-- personalBankingDao와 fixedDepositDao 빈 정의가 부모 빈 정의의 databaseOperations프로퍼티를 상속 -->
 	<bean id="daoTemplate" abstract="true">
 		<property name="databaseOperations" ref="databaseOperations" />
 	</bean>
